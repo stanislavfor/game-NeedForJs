@@ -27,18 +27,18 @@ const keys = {
 const setting = {
     start: false,
     score: 0,
-    speed: 3,
+    speed: 5,
     traffic: 3
 };
 
 function getQuantityElements(heightElement) {
-    return document.documentElement.clientHeight / heightElement + 1;
+    return Math.ceil(gameArea.offsetHeight / heightElement);
 }
 
 function startGame() {
     start.classList.add('hide');
     gameArea.innerHTML = '';
-
+    score.style.top = 25 + 'px';
     for (let i = 0; i < 20; i++) {
         const line = document.createElement('div');
         line.classList.add('line');
@@ -51,13 +51,19 @@ function startGame() {
     for (let i = 0; i < getQuantityElements(100 * setting.traffic); i++) {
         const enemy = document.createElement('div');
         enemy.classList.add('enemy');
+        let enemyImg = Math.floor(Math.random() * 4) + 1;
         enemy.y = -100 * setting.traffic * (i + 1);
         enemy.style.left = Math.floor(Math.random() * (gameArea.offsetWidth - 60)) + 'px';
-        enemy.style.top = Math.floor(enemy.y) + 'px';
+        enemy.style.top = enemy.y + 'px';        
+        enemy.style.background = `transparent url(./image/enemy${enemyImg}.png) center/cover no-repeat`;
         gameArea.appendChild(enemy);
     }
 
-    audio.play();
+    
+
+    if(allow) {
+        audio.play();
+    }    
     setting.score = 0;
     setting.start = true;
     gameArea.appendChild(car);
@@ -124,10 +130,11 @@ function moveEnemy() {
         let enemyRect = item.getBoundingClientRect();
         if (carRect.top <= enemyRect.bottom &&
             carRect.right >= enemyRect.left &&
-            carRect.left <= enemyRect.right &&
+            carRect.left + 3 <= enemyRect.right &&
             carRect.bottom >= enemyRect.top) {
             setting.start = false;
             console.warn('traffic accident');
+            audio.pause();
             start.classList.remove('hide');
             score.style.top = start.offsetHeight + 300 + 'px';
         }
