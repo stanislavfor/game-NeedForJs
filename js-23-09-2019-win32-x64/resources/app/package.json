@@ -1,0 +1,25 @@
+{
+  "name": "js-23-09-2019",
+  "version": "1.0.0",
+  "description": "js-game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanislavfor/game-NeedForJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanislavfor/game-NeedForJs/issues"
+  },
+  "homepage": "https://github.com/stanislavfor/game-NeedForJs#readme",
+  "devDependencies": {
+    "electron": "^6.0.11",
+    "electron-packager": "^14.0.6",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  }
+}

@@ -1,0 +1,9 @@
+﻿*.diff
+*.err
+*.zip
+*.log
+*.pdf
+*.jpg
+
+node_modules/
+assets/

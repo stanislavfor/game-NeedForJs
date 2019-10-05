@@ -1,0 +1,212 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.game {
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+.start {
+    position: absolute;
+    color: #ffffff;
+    width: 100%;
+    left: 0;
+    top: 25%;
+    z-index: 99;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.car {
+    width: 50px;
+    height: 100px;
+    background: transparent url('./image/player.png') center/cover no-repeat;
+    position: absolute;
+    z-index: 1000;
+}
+
+.enemy {
+    width: 50px;
+    height: 100px;
+    /* background: transparent url('./image/enemy2.png') center/cover no-repeat; */
+    position: absolute;
+    left: 125px;
+    bottom: 10px;
+    z-index: 1000;
+}
+
+
+.gameArea {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 300px;
+    height: 96vh;
+    border-left: 5px solid #6F5F5F;
+    border-right: 5px solid #6F5F5F;
+    background: #000000;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.line {
+    position: absolute;
+    z-index: 99;
+    width: 2px;
+    height: 40px;
+    background: #ffffff;
+    left: 145px;
+}
+
+.score {
+    position: absolute;    
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+}

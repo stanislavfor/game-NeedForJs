@@ -32,14 +32,14 @@ const setting = {
 };
 
 function getQuantityElements(heightElement) {
-    return Math.ceil(gameArea.offsetHeight / heightElement);
+    return Math.ceil(gameArea.offsetHeight / heightElement) + 1;
 }
 
 function startGame() {
     start.classList.add('hide');
     gameArea.innerHTML = '';
     score.style.top = 25 + 'px';
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < getQuantityElements(100); i++) {
         const line = document.createElement('div');
         line.classList.add('line');
         line.style.top = (i * 20) + 'px';
@@ -51,7 +51,8 @@ function startGame() {
     for (let i = 0; i < getQuantityElements(100 * setting.traffic); i++) {
         const enemy = document.createElement('div');
         enemy.classList.add('enemy');
-        let enemyImg = Math.floor(Math.random() * 4) + 1;
+        let enemyImg = Math.floor(Math.random() * 5) + 1;
+        console.log(enemyImg + ' - number of enemies');
         enemy.y = -100 * setting.traffic * (i + 1);
         enemy.style.left = Math.floor(Math.random() * (gameArea.offsetWidth - 60)) + 'px';
         enemy.style.top = enemy.y + 'px';        
